@@ -53,7 +53,7 @@ Um mini e-commerce com funcionalidades de autenticação, gestão de estoque, si
 
 ```bash
 # Clone o repositório
-git clone https://github.com/r04r970/desafio-tecnico-qa-bixtecnologia.git
+git clone https://github.com/r04r970/desafio-tecnico-qa.git
 cd desafio-tecnico-qa-bixtecnologia/playwright
 
 # Execute com Docker
