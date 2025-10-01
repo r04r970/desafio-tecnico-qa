@@ -1,136 +1,135 @@
-# BIX Mini E-commerce - Desafio Técnico QA
+# Desafio de Automação de QA – Mini E-commerce
 
-Um mini e-commerce com funcionalidades de autenticação, gestão de estoque, sistema de cupons de desconto e testes automatizados de QA.
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)
+[![Playwright](https://img.shields.io/badge/Playwright-1.50.0-blue?logo=playwright)](https://playwright.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.1-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Testes E2E](https://img.shields.io/badge/Testes%20E2E-aprovados-brightgreen)](https://github.com/bixtecnologia/desafio-tecnico-qa)
+[![Testes API](https://img.shields.io/badge/Testes%20API-aprovados-brightgreen)](https://github.com/bixtecnologia/desafio-tecnico-qa)
 
-## 🚀 Funcionalidades Implementadas
+---
 
-### ✅ Autenticação de Usuários
+## Candidato: Rodrigo Barbosa
 
-* Sistema de login/logout
-* Sessões persistentes com localStorage
-* Proteção de rotas para checkout
-* Testes automatizados de login e logout
+---
 
-### ✅ Gestão de Estoque
+## 🎯 Objetivo
 
-* Controle de quantidade disponível por produto
-* Validação de estoque em tempo real
-* Atualização automática após compras
-* Interface adaptativa (botões desabilitados quando sem estoque)
-* Testes automatizados de quantidade e validação de estoque
+Automatizar testes para um **Mini E-commerce**, demonstrando:
 
-### ✅ Sistema de Cupons de Desconto
+* Fluxos completos de ponta a ponta (E2E)
+* Validações de APIs
+* Pipeline de testes sustentável e escalável
 
-* Cupons de desconto percentual e valor fixo
-* Validação de cupons ativos/expirados
-* Aplicação automática no checkout
-* Cálculo de subtotal, desconto e total final
-* Testes automatizados de aplicação e validade de cupons
+O projeto original está disponível em: [desafio-tecnico-qa-bixtecnologia](https://github.com/bixtecnologia/desafio-tecnico-qa)
 
-### ✅ Carrinho de Compras
+---
 
-* Adição múltipla de produtos
-* Validação de quantidade vs estoque
-* Cálculo automático de totais
-* Limpeza automática após checkout
-* Testes automatizados de fluxo do carrinho e checkout
+## 🛠 Ferramentas e Tecnologias
 
-## 🛠️ Tecnologias
+* **Playwright** – automação E2E
+* **TypeScript** – scripts de teste
+* **Node.js** – ambiente de execução
+* **MailSlurp** – testes de e-mail 2FA
+* **Git/GitHub** – controle de versão
+* **Loom** – gravação da execução dos testes
 
-* **Backend**: Node.js + Express
-* **Frontend**: HTML5 + CSS3 + JavaScript Vanilla
-* **Automação de Testes**: Playwright + TypeScript
-* **Containerização**: Docker + Docker Compose
+---
 
-## 📋 Pré-requisitos
+## 🔹 Funcionalidades Automatizadas
 
-* Docker e Docker Compose instalados
-* Node.js e npm instalados
+**Autenticação de Usuário**
+
+* Login, logout e 2FA (verificação por e-mail)
+
+**Gestão de Produtos e Carrinho**
+
+* Listagem de produtos, adicionar/remover do carrinho
+* Aplicar cupons e verificar cálculos de subtotal/total
+
+**Checkout e Pedidos**
+
+* Fluxo completo de finalização de pedido
+* Confirmação de pedido e validação de e-mail
+
+**Validações de API**
+
+* Endpoints de usuário, produtos e pedidos
+* Estrutura de resposta e códigos de status
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+desafio-tecnico-qa-bixtecnologia/
+│
+├─ tests/
+│  ├─ e2e/          # Testes de ponta a ponta (UI)
+│  ├─ api/          # Testes de API
+│  └─ utils/        # Funções auxiliares
+│
+├─ pages/           # Page Object Model
+├─ evidence/        # Capturas de tela e logs
+├─ package.json
+├─ tsconfig.json
+└─ README.md
+```
+
+---
 
 ## 🚀 Como Executar
 
-### Docker
+1. **Clonar o repositório**
 
 ```bash
-# Clone o repositório
-git clone https://github.com/r04r970/desafio-tecnico-qa.git
-cd desafio-tecnico-qa-bixtecnologia/playwright
+git clone https://github.com/r04r970/desafio-tecnico-qa-bixtecnologia.git
+cd desafio-tecnico-qa-bixtecnologia
+```
+
+2. **Instalar dependências**
+
+```bash
+npm install
+```
+
+## 🛠️ Tecnologias - **Backend**: Node.js + Express - **Frontend**: HTML5 + CSS3 + JavaScript Vanilla - **Containerização**: Docker + Docker Compose ## 📋 Pré-requisitos - Docker e Docker Compose instalados ## 🚀 Como Executar ### Docker
+bash
 
 # Execute com Docker
 docker compose up --build
 
 # Acesse a aplicação
 open http://localhost:3001
-```
+## 👤 Credenciais de Teste ### Usuários Disponíveis - **Admin**: admin@test.com / admin123 - **Usuário**: user@test.com / user123 ### Cupons de Desconto - WELCOME10 - 10% de desconto - SAVE20 - 20% de desconto - FIXED50 - R$ 50,00 de desconto fixo - EXPIRED - Cupom expirado (para testes) ## 📡 API Endpoints ### Autenticação - POST /api/login - Login de usuário - POST /api/logout - Logout de usuário - GET /api/me - Informações do usuário logado
 
-### Local (sem Docker)
-
-```bash
-# Instalar dependências
-docker compose up --build
-npm install
-
-# Executar aplicação
-npm start
-```
-
-### Executar Testes Automatizados
+3. **Executar testes E2E**
 
 ```bash
-# Testes E2E
 npx playwright test tests/e2e --headed --debug
+```
 
-# Testes de API
+4. **Executar testes de API**
+
+```bash
 npx playwright test tests/api --headed --debug
 ```
 
-## 👤 Credenciais de Teste
+> Os testes E2E são executados primeiro, seguidos pelos testes de API.
 
-### Usuários Disponíveis
+---
 
-* **Admin**: `admin@test.com` / `admin123`
-* **Usuário**: `user@test.com` / `user123`
+## 📹 Evidências
 
-### Cupons de Desconto
+O vídeo da execução dos testes foi gravado em inglês utilizando **Loom**:
+[Assistir demonstração](https://drive.google.com/drive/folders/1TfiNOnvAEAX_Roy4OTFGb87I01QAGIOH?usp=sharing)
 
-* `WELCOME10` - 10% de desconto
-* `SAVE20` - 20% de desconto
-* `FIXED50` - R$ 50,00 de desconto fixo
-* `EXPIRED` - Cupom expirado (para testes)
+Capturas de tela e logs estão incluídos na pasta `evidence/`.
 
-## 📡 API Endpoints
+---
 
-### Autenticação
+## ✅ Destaques
 
-* `POST /api/login` - Login de usuário
-* `POST /api/logout` - Logout de usuário
-* `GET /api/me` - Informações do usuário logado
-
-### Produtos
-
-* `GET /api/products` - Lista de produtos com estoque
-
-### Cupons
-
-* `POST /api/validate-coupon` - Validar cupom de desconto
-
-### Checkout
-
-* `POST /api/checkout` - Finalizar compra com validação de estoque e cupons
-
-### Health Check
-
-* `GET /api/health` - Status da aplicação
-
-## 🏗️ Arquitetura
-
-```
-qa-test/
-├── backend/
-│   ├── data/           # Dados JSON (produtos, usuários, cupons)
-│   ├── public/         # Frontend estático
-│   └── server.js       # Servidor Express
-├── tests/              # Testes automatizados E2E e API
-├── docker-compose.yml  # Configuração Docker
-└── Dockerfile          # Imagem Docker
-```
+* Padrão Page Object Model para testes manuteníveis
+* Testes de API e UI independentes para execução rápida em CI/CD
+* Tratamento robusto de erros e validações
+* Cobertura completa dos fluxos críticos
