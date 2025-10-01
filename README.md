@@ -62,16 +62,21 @@ O projeto original está disponível em: [desafio-tecnico-qa-bixtecnologia](http
 
 ```
 desafio-tecnico-qa-bixtecnologia/
+├─ backend/
+│  ├─ data/ # Dados JSON (produtos, usuários, cupons)
+│  ├── public/ # Frontend estático
+│  └── server.js # Servidor Express 
 │
-├─ tests/
-│  ├─ e2e/          # Testes de ponta a ponta (UI)
-│  ├─ api/          # Testes de API
-│  └─ utils/        # Funções auxiliares
+├── docker-compose.yml # Configuração Docker └── Dockerfile # Imagem Docker
 │
-├─ pages/           # Page Object Model
-├─ evidence/        # Capturas de tela e logs
-├─ package.json
-├─ tsconfig.json
+├── playwright
+│  ├─ tests/
+│    ├─ e2e/          # Testes de ponta a ponta (UI)
+│    └─ api/          # Testes de APIs
+│
+│  ├─ pages/           # Page Object Model
+│  ├─ package.json
+│  └─ tsconfig.json
 └─ README.md
 ```
 
